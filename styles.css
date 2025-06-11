@@ -1,0 +1,241 @@
+/* Reset & base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: radial-gradient(ellipse at bottom, #050d1e 0%, #000000 100%);
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+.A1{
+    
+    height: 150px;
+}
+/* Fonts and layout */
+h1, h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00ffd5;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.logo {
+  font-size: 1.8rem;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #00ffd5;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 120px 20px 80px;
+  background: url('space-bg.png') no-repeat center center/cover;
+  background-attachment:scroll;
+}
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px 60px;
+    background-attachment: scroll; /* Disable fixed background */
+    background-position: center top;
+  }
+}
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 1.3rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+.btn {
+  background: #00ffd5;
+  color: #000;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #00c3a5;
+  transform: scale(1.05);
+}
+.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #00ffd5; }
+  70% { box-shadow: 0 0 0 20px rgba(0, 255, 213, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 255, 213, 0); }
+}
+
+/* Features */
+.features {
+  padding: 80px 20px;
+  background-color: rgba(10, 10, 30, 0.8);
+  text-align: center;
+}
+.feature-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+}
+.feature {
+  max-width: 300px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+/* Screenshots vertical layout */
+.screenshot-vertical {
+  margin-top: 60px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  padding: 0 20px;
+}
+.ss-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+.ss-row.reverse {
+  flex-direction: row-reverse;
+}
+.ss-row img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 30px #00ffd5;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.ss-row img:hover {
+  transform: scale(1.05);
+}
+.ss-desc {
+  flex: 1;
+  min-width: 250px;
+}
+.ss-desc h4 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.ss-desc p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .ss-row,
+  .ss-row.reverse {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .ss-desc {
+    margin-top: 20px;
+  }
+
+  .ss-row img {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.ss-desc h4 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+.ss-desc p {
+  font-size: 1rem;
+  color: #ddd;
+}
+
+/* Download section */
+.download {
+  text-align: center;
+  padding: 120px 20px 140px; /* more bottom padding */
+  background: #000;
+  margin-top: 80px;
+}
+.download-btn {
+  background-color: #ff00aa;
+  color: white;
+  font-size: 1.2rem;
+}
+.download-btn:hover {
+  background-color: #cc0088;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #000000;
+  border-top: 1px solid #111;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ss-row {
+    flex-direction: column !important;
+  }
+  .ss-row.reverse {
+    flex-direction: column !important;
+  }
+  .ss-row img, .ss-desc {
+    max-width: 100%;
+  }
+  .ss-desc {
+    margin-top: 20px;
+  }
+  .feature-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
